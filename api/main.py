@@ -25,8 +25,12 @@ with open("q-fastapi.csv", newline='') as csvfile:
             "class": row["class"]
         })
 
+@app.get("/")
+def get_students():
+    return {"students": student_data}
+    
 @app.get("/api")
-def get_students(class_: Optional[List[str]] = Query(None, alias="class")):
+def get_students_in_a_class(class_: Optional[List[str]] = Query(None, alias="class")):
     if class_:
         filtered = [student for student in students_data if student["class"] in class_]
     else:
