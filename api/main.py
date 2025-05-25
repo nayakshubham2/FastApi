@@ -16,7 +16,7 @@ app.add_middleware(
 
 # Load data from CSV once when the server starts
 students_data = []
-with open("q-fastapi.csv", newline='') as csvfile:
+with open("api/q-fastapi.csv", newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         # Ensure studentId is int
