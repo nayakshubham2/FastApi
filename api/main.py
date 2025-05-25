@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-csv_path = Path(__file__).parent / "api/q-fastapi.csv"
+csv_path = Path(__file__).parent / "q-fastapi.csv"
 # Load data from CSV once when the server starts
 students_data = []
 with open(csv_path, newline='') as csvfile:
